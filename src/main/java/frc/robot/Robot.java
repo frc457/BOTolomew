@@ -16,11 +16,11 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
  * arcade steering and an Xbox controller.
  */
 public class Robot extends TimedRobot {
-  //right motor controllers
+  //right motor controllers in ports 0 and 1
   private final PWMVictorSPX leftMotor1 = new PWMVictorSPX(0);
   private final PWMVictorSPX leftMotor2 = new PWMVictorSPX(1);
 
-  //left motor controllers
+  //left motor controllers in ports 2 and 3
   private final PWMVictorSPX rightMotor1 = new PWMVictorSPX(2);
   private final PWMVictorSPX rightMotor2 = new PWMVictorSPX(3);
 
@@ -28,7 +28,7 @@ public class Robot extends TimedRobot {
   private final MotorControllerGroup leftspeedgroup = new MotorControllerGroup(leftMotor1, leftMotor2);
   private final MotorControllerGroup rightspeedgroup = new MotorControllerGroup(rightMotor1, rightMotor2);
 
-
+  //drivetrain
   private final DifferentialDrive m_robotDrive = new DifferentialDrive(rightspeedgroup, leftspeedgroup);
 
   //joystick
@@ -36,7 +36,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotInit() {
-    // We need to invert one side of the drivetrain so that positive voltages
+    // We need to invert one side of the drivetrain so that positive voltages 
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
     rightMotor1.setInverted(true);
