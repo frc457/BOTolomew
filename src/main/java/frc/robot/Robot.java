@@ -41,15 +41,29 @@ public class Robot extends TimedRobot {
     // gearbox is constructed, you might have to invert the left side instead.
     rightMotor1.setInverted(true);
     rightMotor2.setInverted(true);
-
   }
 
+  @Override
+  public void robotPeriodic() {
+  }
+  
+  @Override
+  public void autonomousInit() {
+  }
+  
+  @Override
+  public void autonomousPeriodic() {
+  }
+  
+  @Override
+  public void teleopInit() {
+  }
+  
   @Override
   public void teleopPeriodic() {
     // Drive with split arcade drive.
     // That means that the Y axis of the left stick moves forward
     // and backward, and the X of the right stick turns left and right.
-
 
     m_robotDrive.arcadeDrive(-m_driverController.getLeftY(), m_driverController.getRightX());
   }
